@@ -45,26 +45,20 @@ const Join = () => {
 
      const handleChange = (selectedItems) => {
        setSelectedItems(newArray.concat(selectedItems));
-       }
-
-    const navigateData = () => {   
-    const navigate = useNavigate();
-    navigate('/chat',{state:{name:{name},number:{number}}});
-    }
-      
+     }     
 
     return (
 
     <div className="outerContainer">  
          <div className = "innerContainer">
          <h1 className= "headingText">Happy Shopping</h1>
-           <input placeholder="Customer Name" className="userName" id="name" name="name" type="text" onChange= {(event) => setName(event.target.value)}/>
-           <input placeholder="Contact Number" className="contactNumber mt-20" id="number" name="number" type="tel" onChange={changeHandler}/>
+           <input placeholder="Customer Name" className="userName" id="name" name="name" type="text" value= {name} onChange= {(event) => setName(event.target.value)}/>
+           <input placeholder="Contact Number" className="contactNumber mt-20" id="number" maxLength="10" name="number" value={number} pattern="^-?[0-9]\d*\.?\d*$" type="tel" onChange={(event) => setNumber(event.target.value)}/>
            <Multiselect options={options} displayValue ="value" className="mt-20" value={selectedItems} onChange={(event) => {handleChange(event.target.value)}}/>
            <Datepicker placeholderText="Expeced Delivery Date" className= "expectedDate mt-20" clearable selected={selectedDate} onChange={(date) => setSelectedDate(date)} minDate={new Date()} dateFormat='dd/MM/yyyy'/>
-          {/* <Link to={'/chat?name=abc&name=890'}> */}
-           <button className="button mt-20" type="submit" onClick={navigateData}>Submit</button>    
-           {/* </Link> */}
+           <Link to={'/chat?name=abc&name=890'}>
+           <button className="button mt-20" type="submit">Submit</button> 
+           </Link>
        </div>    
     </div>
     

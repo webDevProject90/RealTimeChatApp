@@ -26,7 +26,6 @@ html, body {
   }
   
   .userName, .contactNumber,.expectedDate, .react-datepicker-wrapper{
-    border-radius: 0;
     padding: 10px 20px 10px 5px;
     width: 100%;
   }
@@ -69,7 +68,6 @@ html, body {
     .joinInnerContainer {
       width: 90%;
     }
-  
   
   }
   

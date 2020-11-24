@@ -16,24 +16,26 @@
   }
 
   .msgElements{
-     display : flex;
+    display: flex;
+    margin-bottom: 5px;
+    background-color: whitesmoke;
   }
 
+  .heading{
+    background-color: steelblue !important;
+    text-align: center;
+  }
   #messageContainer{
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
     max-height: 1000px;
-    min-height: 757px;
+    min-height: 747px;
+    background-color:#FFF;
   }
 
   #outerChatContainer div {
-    background-color: #CCC;
     padding: 5px;
-  }
-
-  #outerChatContainer div:nth-child(2n) {
-    background-color: #FFF;
   }
 
   #sendContainer {

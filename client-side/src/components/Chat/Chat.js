@@ -74,7 +74,7 @@ const Chat = ({location}) => {
 
     return (
     <div id="outerChatContainer">  
-    <span>Happy Shopping</span>
+    <div class="heading">Happy Shopping</div>
     <div id="messageContainer"></div>
     <form id="sendContainer">   
     <input type="text" id="messageInput"/>
