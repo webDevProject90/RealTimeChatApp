@@ -1,0 +1,49 @@
+#outerChatContainer {
+    padding: 0;
+    margin: 20px 0px 0px 20px;
+    display: inline-block;
+    justify-content: center;
+    background-color: #FFF;
+    border: 2px solid rgb(120, 142, 160);
+    height: 800px;
+    width: 600px;
+    scroll-behavior: auto;
+  }
+
+  #outerChatContainer {
+    width: 80%;
+    max-width: 1200px;
+  }
+
+  .msgElements{
+     display : flex;
+  }
+
+  #messageContainer{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    max-height: 1000px;
+    min-height: 757px;
+  }
+
+  #outerChatContainer div {
+    background-color: #CCC;
+    padding: 5px;
+  }
+
+  #outerChatContainer div:nth-child(2n) {
+    background-color: #FFF;
+  }
+
+  #sendContainer {
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    display: flex;
+    align-self: flex-end;
+  }
+
+  #messageInput {
+    flex-grow: 1;
+  }

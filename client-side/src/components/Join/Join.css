@@ -1,0 +1,78 @@
+html, body {
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #root {
+    height: 100vh;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  .outerContainer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    align-items: center;
+    background-color: #1A1A1D;
+  }
+  
+  .innerContainer {
+    width: 25%;
+  }
+  
+  .userName, .contactNumber,.expectedDate, .react-datepicker-wrapper{
+    border-radius: 0;
+    padding: 10px 20px 10px 5px;
+    width: 100%;
+  }
+
+  #multiselectContainerReact div {
+    margin-top: 20px;
+    border-radius: 0px;
+    background-color: white;
+  }
+
+  .headingText {
+    color: white;
+    font-size: 2.5em;
+    padding-bottom: 10px;
+    border-bottom: 2px solid white;
+    text-align: center;
+  }
+  
+  .button {
+      color: #fff !important;
+      text-transform: uppercase;
+      text-decoration: none;
+      background: #2979FF;
+      padding: 10px;
+      border-radius: 5px;
+      display: inline-block;
+      border: none;
+      width: 50%;
+  }
+  
+  .mt-20 {
+    margin-top: 20px;
+  }
+
+  @media (min-width: 320px) and (max-width: 480px) {
+    .joinOuterContainer {
+      height: 100%;
+    }
+  
+    .joinInnerContainer {
+      width: 90%;
+    }
+  
+  
+  }
+  
+  button:focus {
+    outline: 0;
+  }
