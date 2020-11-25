@@ -30,8 +30,20 @@ html, body {
     width: 100%;
   }
 
-  #multiselectContainerReact div {
+  #multiselectContainerReact{
+    padding : 0px;
     margin-top: 20px;
+  }    
+
+  .errorMsg{
+    width: 50%;
+    margin-top: 20px;
+    text-align: center;
+    color : red;
+    display: none;
+  }
+
+  #multiselectContainerReact div {
     border-radius: 0px;
     background-color: white;
   }

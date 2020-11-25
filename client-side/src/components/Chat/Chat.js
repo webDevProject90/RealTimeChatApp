@@ -4,20 +4,12 @@ import io from 'socket.io-client';
 import './Chat.css';
 import { useLocation } from 'react-router-dom';
 
-const Chat = ({location}) => { 
-
-    
+const Chat = ({location}) => {     
     
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
-     const serverPort = 'localhost:5000';
-     let socket;    
-     
-     //const name="abc";
-     //const number = "448784";
-     
-     const {state} = useLocation();
-     console.log({state});
+    const serverPort = 'localhost:5000';    
+    const {state} = useLocation();
     
     useEffect(() => {
        const {name,number} = queryString.parse(location.search);
@@ -25,9 +17,6 @@ const Chat = ({location}) => {
         socket = io(serverPort);
         setName(name);
         setNumber(number);
-        
-        // const name = 'abc';
-        // const number = '123';
         
         socket.emit('join',{name, number});
         socket.emit('new-user', name);
@@ -44,7 +33,6 @@ const Chat = ({location}) => {
           appendMessage(name +'disconnected');
         })
 
-        const messageChatContainer = document.getElementById('outerChatContainer');
         const messageContainer = document.getElementById('messageContainer');
         const sendContainer = document.getElementById('sendContainer');
         const messageInput = document.getElementById('messageInput');
@@ -74,12 +62,12 @@ const Chat = ({location}) => {
 
     return (
     <div id="outerChatContainer">  
-    <div class="heading">Happy Shopping</div>
-    <div id="messageContainer"></div>
-    <form id="sendContainer">   
-    <input type="text" id="messageInput"/>
-    <button type="submit" id="sendButton">Send</button>
-    </form> 
+     <div class="heading">Happy Shopping</div>
+       <div id="messageContainer"></div>
+         <form id="sendContainer">   
+           <input type="text" id="messageInput"/>
+           <button type="submit" id="sendButton">Send</button>
+         </form> 
     </div>   
     )
 };
