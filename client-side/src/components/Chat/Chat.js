@@ -8,8 +8,8 @@ const Chat = ({location}) => {
     
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
-    const serverPort = 'localhost:5000';    
-    const {state} = useLocation();
+    const serverPort = 'localhost:5000';
+    let socket;
     
     useEffect(() => {
        const {name,number} = queryString.parse(location.search);
@@ -18,12 +18,11 @@ const Chat = ({location}) => {
         setName(name);
         setNumber(number);
         
-        socket.emit('join',{name, number});
         socket.emit('new-user', name);
 
-        socket.on('chat-message', data => {
-          appendMessage(data);
-        })  
+        socket.on('chat-message', message => {
+          appendMessage(message);
+        });
 
         socket.on('connection', name =>{
           appendMessage(name +'connected');
